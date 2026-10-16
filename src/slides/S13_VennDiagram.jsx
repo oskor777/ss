@@ -64,27 +64,27 @@ export default function S13_VennDiagram() {
   const currentZoneData = zones[activeZone] || zones.allThree;
 
   return (
-    <div className="flex flex-col justify-center h-full max-w-7xl mx-auto px-2">
+    <div className="flex flex-col justify-start sm:justify-center min-h-full max-w-7xl mx-auto px-1 sm:px-2 py-1 sm:py-0">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-3">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-2.5 sm:mb-3 gap-1 sm:gap-2">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-wider mb-1">
-            <FiLayers className="text-sm" /> {t('Slide 13 • Comparative Analysis', '13-slayd • Qiyosiy tahlil')}
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-1">
+            <FiLayers className="text-xs sm:text-sm" /> {t('Slide 13 • Comparative Analysis', '13-slayd • Qiyosiy tahlil')}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900 dark:text-white">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight">
             {vennData.title}
           </h2>
         </div>
 
-        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 sm:mt-0 flex items-center gap-1">
-          <FiInfo className="text-teal-500" /> {t('Click or hover SVG zones to inspect details', 'Tafsilotlarni ko\'rish uchun zonalarni bosing')}
+        <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-1 sm:mt-0 flex items-center gap-1">
+          <FiInfo className="text-teal-500 shrink-0" /> {t('Click or hover SVG zones to inspect details', 'Tafsilotlarni ko\'rish uchun zonalarni bosing')}
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center my-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-5 items-stretch my-auto">
         {/* Left: Custom Interactive SVG Venn Diagram (6 cols) */}
-        <div className="lg:col-span-6 glass-card rounded-3xl p-4 border border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center relative">
-          <svg viewBox="0 0 400 360" className="w-full max-w-[380px] h-auto drop-shadow-md select-none">
+        <div className="lg:col-span-6 glass-card rounded-2xl sm:rounded-3xl p-3 sm:p-4 border border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center relative">
+          <svg viewBox="0 0 400 360" className="w-full max-w-[270px] sm:max-w-[380px] h-auto drop-shadow-md select-none">
             {/* Circle 1: Father (Top Left) */}
             <circle
               cx="160"
@@ -190,7 +190,7 @@ export default function S13_VennDiagram() {
         </div>
 
         {/* Right: Selected Zone Details & Analysis (6 cols) */}
-        <div className="lg:col-span-6 flex flex-col justify-between glass-card rounded-3xl p-5 border border-slate-200 dark:border-slate-800 min-h-[350px]">
+        <div className="lg:col-span-6 flex flex-col justify-between glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 min-h-0 sm:min-h-[350px]">
           <div>
             <div className="flex items-center gap-2 mb-3 pb-2 border-b border-slate-200 dark:border-slate-800">
               <span className="text-2xl">{currentZoneData.icon}</span>

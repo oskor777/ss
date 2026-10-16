@@ -21,9 +21,9 @@ export default function ProgressBar({
   const progressPercent = ((currentSlide) / totalSlides) * 100;
 
   return (
-    <footer className="w-full shrink-0 z-30 px-3 sm:px-6 py-2 sm:py-3 backdrop-blur-md bg-white/70 dark:bg-slate-900/80 border-t border-slate-200/80 dark:border-slate-800/80 transition-colors">
+    <footer className="w-full shrink-0 z-30 px-2 sm:px-6 py-1.5 sm:py-3 pb-[max(0.6rem,env(safe-area-inset-bottom))] backdrop-blur-md bg-white/80 dark:bg-slate-900/85 border-t border-slate-200/80 dark:border-slate-800/80 transition-colors">
       {/* Linear top progress line */}
-      <div className="w-full h-1 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden mb-2">
+      <div className="w-full h-1 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden mb-1.5 sm:mb-2">
         <motion.div
           className="h-full bg-gradient-to-r from-teal-500 via-sky-500 to-indigo-500 rounded-full"
           initial={false}
@@ -32,24 +32,24 @@ export default function ProgressBar({
         />
       </div>
 
-      <div className="flex items-center justify-between gap-2 max-w-7xl mx-auto">
+      <div className="flex items-center justify-between gap-1.5 max-w-7xl mx-auto">
         {/* Left: Previous Button & Slide Counter */}
-        <div className="flex items-center gap-1.5 sm:gap-3">
+        <div className="flex items-center gap-1 sm:gap-3 shrink-0">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.92 }}
             onClick={prevSlide}
             disabled={currentSlide === 1}
-            className="flex items-center justify-center p-2 rounded-xl text-slate-700 dark:text-slate-200 bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 disabled:opacity-35 disabled:cursor-not-allowed hover:bg-teal-500 hover:text-white dark:hover:bg-teal-600 transition shadow-sm"
+            className="flex items-center justify-center p-1.5 sm:p-2 rounded-xl text-slate-700 dark:text-slate-200 bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 disabled:opacity-35 disabled:cursor-not-allowed hover:bg-teal-500 hover:text-white dark:hover:bg-teal-600 transition shadow-sm"
             aria-label="Previous Slide (Left Arrow)"
             title={t("Previous Slide (← or Space)", "Oldingi slayd (← yoki Space)")}
           >
-            <FiChevronLeft className="text-xl" />
+            <FiChevronLeft className="text-lg sm:text-xl" />
           </motion.button>
 
-          <span className="font-heading font-bold text-sm sm:text-base text-slate-800 dark:text-slate-200 tracking-wide px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60">
+          <span className="font-heading font-bold text-xs sm:text-base text-slate-800 dark:text-slate-200 tracking-wide px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-lg bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60">
             <span className="text-teal-600 dark:text-teal-400 font-extrabold">{currentSlide}</span>
-            <span className="text-slate-400 dark:text-slate-500 mx-1">/</span>
+            <span className="text-slate-400 dark:text-slate-500 mx-0.5 sm:mx-1">/</span>
             <span>{totalSlides}</span>
           </span>
 
@@ -58,11 +58,11 @@ export default function ProgressBar({
             whileTap={{ scale: 0.92 }}
             onClick={nextSlide}
             disabled={currentSlide === totalSlides}
-            className="flex items-center justify-center p-2 rounded-xl text-slate-700 dark:text-slate-200 bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 disabled:opacity-35 disabled:cursor-not-allowed hover:bg-teal-500 hover:text-white dark:hover:bg-teal-600 transition shadow-sm"
+            className="flex items-center justify-center p-1.5 sm:p-2 rounded-xl text-slate-700 dark:text-slate-200 bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 disabled:opacity-35 disabled:cursor-not-allowed hover:bg-teal-500 hover:text-white dark:hover:bg-teal-600 transition shadow-sm"
             aria-label="Next Slide (Right Arrow)"
             title={t("Next Slide (→ or Space)", "Keyingi slayd (→ yoki Space)")}
           >
-            <FiChevronRight className="text-xl" />
+            <FiChevronRight className="text-lg sm:text-xl" />
           </motion.button>
         </div>
 
@@ -87,20 +87,20 @@ export default function ProgressBar({
         </div>
 
         {/* Right: Action Utilities */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
           {/* Speaker Notes Button */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={toggleNotes}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border text-xs sm:text-sm font-medium transition shadow-sm ${
+            className={`flex items-center gap-1 sm:gap-1.5 p-1.5 sm:px-2.5 sm:py-1.5 rounded-full border text-xs sm:text-sm font-medium transition shadow-sm ${
               showNotes
                 ? 'bg-teal-500 text-white border-teal-400'
                 : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:text-teal-500'
             }`}
             title={t("Speaker Script (Press N)", "Taqdimotchi nutq matni (N)")}
           >
-            <FiFileText className="text-base" />
+            <FiFileText className="text-sm sm:text-base" />
             <span className="hidden lg:inline">{t("Notes (N)", "Nutq (N)")}</span>
           </motion.button>
 
@@ -109,14 +109,14 @@ export default function ProgressBar({
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={toggleVocab}
-            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border text-xs sm:text-sm font-medium transition shadow-sm ${
+            className={`flex items-center gap-1 sm:gap-1.5 p-1.5 sm:px-2.5 sm:py-1.5 rounded-full border text-xs sm:text-sm font-medium transition shadow-sm ${
               showVocab
                 ? 'bg-teal-500 text-white border-teal-400'
                 : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:text-teal-500'
             }`}
             title={t("Vocabulary Glossary (Press V)", "Kun tartibi lug'ati (V)")}
           >
-            <FiBook className="text-base" />
+            <FiBook className="text-sm sm:text-base" />
             <span className="hidden lg:inline">{t("Vocab (V)", "Lug'at (V)")}</span>
           </motion.button>
 
@@ -128,11 +128,11 @@ export default function ProgressBar({
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={toggleFullscreen}
-            className="p-2 rounded-full border text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:text-teal-500 transition shadow-sm"
+            className="hidden xs:flex p-1.5 sm:p-2 rounded-full border text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:text-teal-500 transition shadow-sm"
             title={isFullscreen ? t("Exit Fullscreen (F)", "To'liq ekrandan chiqish (F)") : t("Enter Fullscreen (F)", "To'liq ekran (F)")}
             aria-label="Toggle Fullscreen"
           >
-            {isFullscreen ? <FiMinimize className="text-base" /> : <FiMaximize className="text-base" />}
+            {isFullscreen ? <FiMinimize className="text-sm sm:text-base" /> : <FiMaximize className="text-sm sm:text-base" />}
           </motion.button>
         </div>
       </div>

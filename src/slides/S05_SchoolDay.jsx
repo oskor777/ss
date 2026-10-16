@@ -10,20 +10,20 @@ export default function S05_SchoolDay() {
   const { t } = useLanguage();
 
   return (
-    <div className="flex flex-col justify-center h-full max-w-7xl mx-auto px-2">
+    <div className="flex flex-col justify-start sm:justify-center min-h-full max-w-7xl mx-auto px-1 sm:px-2 py-1 sm:py-0">
       {/* Slide Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-3 sm:mb-4 gap-2">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-wider mb-1">
-            <FiClock className="text-sm" /> {t('Slide 5 • Student Routine', '5-slayd • O\'quvchi kun tartibi')}
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-1">
+            <FiClock className="text-xs sm:text-sm" /> {t('Slide 5 • Student Routine', '5-slayd • O\'quvchi kun tartibi')}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900 dark:text-white">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight">
             {schoolDay.headline}
           </h2>
         </div>
 
         {/* Counter Badge */}
-        <div className="mt-2 sm:mt-0 px-4 py-2 rounded-2xl bg-gradient-to-r from-teal-500/20 to-sky-500/20 border border-teal-500/40 text-teal-700 dark:text-teal-300 font-heading font-bold text-sm sm:text-base flex items-center gap-2 shadow-sm">
+        <div className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-2xl bg-gradient-to-r from-teal-500/20 to-sky-500/20 border border-teal-500/40 text-teal-700 dark:text-teal-300 font-heading font-bold text-xs sm:text-base flex items-center gap-2 shadow-sm self-start sm:self-auto">
           <span>📚</span>
           <span>
             <AnimatedCounter value={6} suffix={` ${t('Lessons', 'Dars')}`} /> = {t('4 h 30 min of instruction', '4 soat 30 daqiqa dars')}
@@ -31,9 +31,9 @@ export default function S05_SchoolDay() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch my-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-5 items-stretch my-auto">
         {/* Left Column: School Lessons Timeline (13:00 - 18:00) (7 cols) */}
-        <div className="lg:col-span-7 glass-card rounded-3xl p-5 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+        <div className="lg:col-span-7 glass-card rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
           <div className="flex items-center justify-between mb-3 pb-2 border-b border-slate-200 dark:border-slate-800">
             <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
               <FiBookOpen className="text-teal-500" />

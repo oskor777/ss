@@ -12,61 +12,61 @@ export default function S07_WorkSchoolSchedule() {
   const totalDayHours = endDayHour - startDayHour; // 12 hours
 
   return (
-    <div className="flex flex-col justify-center h-full max-w-7xl mx-auto px-2">
+    <div className="flex flex-col justify-start sm:justify-center min-h-full max-w-7xl mx-auto px-1 sm:px-2 py-1 sm:py-0">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-3 sm:mb-4 gap-1.5 sm:gap-2">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-wider mb-1">
-            <FiBriefcase className="text-sm" /> {t('Slide 7 • Survey Question 2', '7-slayd • So\'rovnoma 2-savoli')}
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-1">
+            <FiBriefcase className="text-xs sm:text-sm" /> {t('Slide 7 • Survey Question 2', '7-slayd • So\'rovnoma 2-savoli')}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900 dark:text-white">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight">
             {q2_workSchool.question}
           </h2>
         </div>
 
-        <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1.5 mt-1 sm:mt-0">
-          <FiCalendar className="text-teal-500" />
+        <div className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1.5 mt-1 sm:mt-0">
+          <FiCalendar className="text-teal-500 shrink-0" />
           <span>{t('Monday to Friday Daily Schedule Gantt Chart', 'Dushanbadan jumagacha kunlik jadval')}</span>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch my-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-5 items-stretch my-auto">
         {/* Left: Gantt-style Timeline Diagram (8 cols) */}
-        <div className="lg:col-span-8 glass-card rounded-3xl p-5 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
-          <div className="flex items-center justify-between pb-2 mb-3 border-b border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
-            <span>{t('Work & School Hours Comparison', 'Ish va o\'qish soatlari taqqoslashi')}</span>
-            <span className="font-mono">{t('Day Span: 07:00 – 19:00 (12 Hours)', 'Kunlik qamrov: 07:00 – 19:00 (12 soat)')}</span>
+        <div className="lg:col-span-8 glass-card rounded-2xl sm:rounded-3xl p-3 sm:p-5 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+          <div className="flex items-center justify-between pb-2 mb-2 sm:mb-3 border-b border-slate-200 dark:border-slate-800 text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
+            <span>{t('Work & School Hours Comparison', 'Ish va o\'qish soatlari')}</span>
+            <span className="font-mono">{t('07:00 – 19:00 (12h)', '07:00 – 19:00 (12s)')}</span>
           </div>
 
           {/* Time axis header marks */}
-          <div className="relative w-full h-6 border-b border-slate-200 dark:border-slate-800 mb-2 pl-28 text-[11px] font-mono text-slate-400">
-            <div className="absolute left-28 right-0 flex justify-between">
+          <div className="relative w-full h-5 sm:h-6 border-b border-slate-200 dark:border-slate-800 mb-2 pl-20 sm:pl-28 text-[9px] sm:text-[11px] font-mono text-slate-400">
+            <div className="absolute left-20 sm:left-28 right-0 flex justify-between pr-1">
               <span>07:00</span>
-              <span>09:00</span>
+              <span className="hidden xs:inline">09:00</span>
               <span>11:00</span>
-              <span>13:00</span>
+              <span className="hidden xs:inline">13:00</span>
               <span>15:00</span>
-              <span>17:00</span>
+              <span className="hidden xs:inline">17:00</span>
               <span>19:00</span>
             </div>
           </div>
 
           {/* Gantt Rows */}
-          <div className="space-y-3.5 my-auto">
+          <div className="space-y-2.5 sm:space-y-3.5 my-auto">
             {q2_workSchool.chartData.map((row, idx) => {
               const leftPercent = ((row.startHour - startDayHour) / totalDayHours) * 100;
               const widthPercent = ((row.endHour - row.startHour) / totalDayHours) * 100;
 
               return (
-                <div key={row.member} className="flex items-center gap-2">
+                <div key={row.member} className="flex items-center gap-1.5 sm:gap-2">
                   {/* Member Label (Fixed width) */}
-                  <div className="w-24 sm:w-28 shrink-0 flex items-center gap-1.5 text-xs sm:text-sm font-heading font-bold text-slate-900 dark:text-white">
-                    <span className="text-base">{row.avatar}</span>
+                  <div className="w-20 sm:w-28 shrink-0 flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-heading font-bold text-slate-900 dark:text-white">
+                    <span className="text-sm sm:text-base">{row.avatar}</span>
                     <span className="truncate">{row.member}</span>
                   </div>
 
                   {/* Gantt Bar Track */}
-                  <div className="flex-1 h-9 rounded-xl bg-slate-100/70 dark:bg-slate-800/60 relative overflow-hidden border border-slate-200/60 dark:border-slate-700/60">
+                  <div className="flex-1 h-8 sm:h-9 rounded-xl bg-slate-100/70 dark:bg-slate-800/60 relative overflow-hidden border border-slate-200/60 dark:border-slate-700/60">
                     <motion.div
                       initial={{ width: 0, opacity: 0 }}
                       animate={{ width: `${widthPercent}%`, opacity: 1 }}
@@ -75,7 +75,7 @@ export default function S07_WorkSchoolSchedule() {
                         left: `${leftPercent}%`,
                         backgroundColor: row.color,
                       }}
-                      className="absolute top-1 bottom-1 rounded-lg px-2 flex items-center justify-between text-white text-[11px] font-semibold shadow-sm truncate"
+                      className="absolute top-1 bottom-1 rounded-lg px-1.5 sm:px-2 flex items-center justify-between text-white text-[10px] sm:text-[11px] font-semibold shadow-sm truncate"
                     >
                       <span className="truncate">{row.timeSpan}</span>
                       <span className="hidden sm:inline bg-black/20 px-1.5 py-0.5 rounded text-[10px]">
@@ -88,9 +88,9 @@ export default function S07_WorkSchoolSchedule() {
             })}
           </div>
 
-          <div className="mt-3 pt-2 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
-            <span>{t('💡 Notice: Salohiddin studies in the afternoon (13:00–18:00)', '💡 E\'tibor bering: Salohiddin tushdan keyin o\'qiydi (13:00–18:00)')}</span>
-            <span className="text-teal-500 font-semibold">{t('Longest: Father (9.5 h)', 'Eng uzog\'i: Dadam (9.5 soat)')}</span>
+          <div className="mt-2.5 pt-2 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">
+            <span className="truncate mr-2">{t('💡 Salohiddin studies in afternoon (13:00–18:00)', '💡 Salohiddin tushdan keyin o\'qiydi (13:00–18:00)')}</span>
+            <span className="text-teal-500 font-semibold shrink-0">{t('Longest: Father (9.5 h)', 'Eng ko\'pi: Dadam (9.5 s)')}</span>
           </div>
         </div>
 

@@ -78,14 +78,14 @@ export default function S03_MeetFamily() {
   };
 
   return (
-    <div className="flex flex-col justify-center h-full max-w-7xl mx-auto px-2">
+    <div className="flex flex-col justify-start sm:justify-center min-h-full max-w-7xl mx-auto px-1 sm:px-2 py-1 sm:py-0">
       {/* Slide Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4 gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-3 sm:mb-4 gap-2 sm:gap-3">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-wider mb-1">
-            <FiUsers className="text-sm" /> {t("Slide 3 • Household Overview", "3-slayd • Xonadon a'zolari")}
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-1">
+            <FiUsers className="text-xs sm:text-sm" /> {t("Slide 3 • Household Overview", "3-slayd • Xonadon a'zolari")}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900 dark:text-white">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight">
             {t("Meet My Family (7 Members)", "Oilam bilan tanishing (7 a'zo)")}
           </h2>
         </div>
@@ -94,7 +94,7 @@ export default function S03_MeetFamily() {
         <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <button
             onClick={handlePlayAllToggle}
-            className={`flex items-center gap-2 px-4 py-2 rounded-2xl text-xs sm:text-sm font-heading font-bold shadow-md transition-all ${
+            className={`flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-xs sm:text-sm font-heading font-bold shadow-md transition-all ${
               isSequentialPlaying
                 ? 'bg-rose-500 hover:bg-rose-600 text-white animate-pulse'
                 : 'bg-gradient-to-r from-teal-500 to-sky-600 hover:from-teal-600 hover:to-sky-700 text-white hover:scale-105 active:scale-95'
@@ -121,7 +121,7 @@ export default function S03_MeetFamily() {
       </div>
 
       {/* 7 Animated Family Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 my-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 my-auto">
         {familyMembers.map((member, idx) => {
           const isCurrentActive = speakingId === `member-${member.id}`;
 
@@ -131,12 +131,12 @@ export default function S03_MeetFamily() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.08, duration: 0.4 }}
-              className={`glass-card rounded-2xl p-4 flex flex-col justify-between border transition-all duration-300 shadow-sm relative overflow-hidden ${
+              className={`glass-card rounded-xl sm:rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between border transition-all duration-300 shadow-sm relative overflow-hidden ${
                 isCurrentActive
-                  ? 'border-teal-400 ring-2 ring-teal-400/80 shadow-xl shadow-teal-500/20 scale-[1.03] bg-teal-500/15 dark:bg-teal-950/40'
+                  ? 'border-teal-400 ring-2 ring-teal-400/80 shadow-xl shadow-teal-500/20 scale-[1.02] bg-teal-500/15 dark:bg-teal-950/40'
                   : member.interviewed 
-                    ? 'border-teal-500/40 bg-gradient-to-b from-teal-500/5 to-transparent hover:scale-[1.02]' 
-                    : 'border-slate-200 dark:border-slate-800 opacity-90 hover:scale-[1.02]'
+                    ? 'border-teal-500/40 bg-gradient-to-b from-teal-500/5 to-transparent hover:scale-[1.01]' 
+                    : 'border-slate-200 dark:border-slate-800 opacity-90 hover:scale-[1.01]'
               }`}
             >
               {/* Top Row: Avatar & Speech Button */}

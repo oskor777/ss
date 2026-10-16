@@ -9,29 +9,29 @@ export default function S14_InterestingFacts() {
   const { t } = useLanguage();
 
   return (
-    <div className="flex flex-col justify-center h-full max-w-7xl mx-auto px-2">
+    <div className="flex flex-col justify-start sm:justify-center min-h-full max-w-7xl mx-auto px-1 sm:px-2 py-1 sm:py-0">
       {/* Header */}
-      <div className="mb-4 text-center sm:text-left">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-wider mb-1">
-          <FiZap className="text-sm" /> {t('Slide 14 • Research Discoveries', '14-slayd • Tadqiqot kashfiyotlari')}
+      <div className="mb-3 sm:mb-4 text-center sm:text-left">
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-1">
+          <FiZap className="text-xs sm:text-sm" /> {t('Slide 14 • Research Discoveries', '14-slayd • Tadqiqot kashfiyotlari')}
         </div>
-        <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900 dark:text-white">
+        <h2 className="text-xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight">
           {t('5 Surprising Facts From My Survey', 'So\'rovnomamdan 5 ta hayratlanarli fakt')}
         </h2>
-        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+        <p className="text-[11px] sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5 sm:mt-1">
           {t('Unexpected discoveries calculated from our family routine interviews', 'Oila a\'zolari suhbatidan aniqlangan qiziqarli faktlar')}
         </p>
       </div>
 
       {/* Facts Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 my-auto">
         {interestingFacts.map((item, idx) => (
           <motion.div
             key={item.id}
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1, duration: 0.4 }}
-            className={`glass-card rounded-3xl p-5 border border-slate-200 dark:border-slate-800 bg-gradient-to-b ${item.color} flex flex-col justify-between hover:scale-[1.02] transition-all shadow-sm ${
+            className={`glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 bg-gradient-to-b ${item.color} flex flex-col justify-between hover:scale-[1.01] transition-all shadow-sm ${
               idx === 4 ? 'sm:col-span-2 lg:col-span-1' : ''
             }`}
           >

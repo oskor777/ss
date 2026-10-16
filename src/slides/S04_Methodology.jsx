@@ -10,29 +10,29 @@ export default function S04_Methodology() {
   const { t } = useLanguage();
 
   return (
-    <div className="flex flex-col justify-center h-full max-w-6xl mx-auto px-2">
+    <div className="flex flex-col justify-start sm:justify-center min-h-full max-w-6xl mx-auto px-1 sm:px-2 py-1 sm:py-0">
       {/* Header */}
-      <div className="mb-6 text-center sm:text-left">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-wider mb-1">
-          <FiFileText className="text-sm" /> {t('Slide 4 • Research Process', '4-slayd • Tadqiqot jarayoni')}
+      <div className="mb-3 sm:mb-6 text-center sm:text-left">
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-1">
+          <FiFileText className="text-xs sm:text-sm" /> {t('Slide 4 • Research Process', '4-slayd • Tadqiqot jarayoni')}
         </div>
-        <h2 className="text-3xl sm:text-5xl font-heading font-extrabold text-slate-900 dark:text-white">
+        <h2 className="text-xl sm:text-3xl lg:text-5xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight">
           {surveyMethodology.title}
         </h2>
-        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+        <p className="text-[11px] sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5 sm:mt-1">
           {t('A scientific 3-step investigation into daily schedules and family time', 'Kun tartibi va oilaviy vaqtni o\'rganish bo\'yicha 3 bosqichli ilmiy tadqiqot')}
         </p>
       </div>
 
       {/* 3-Step Animated Flow */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
         {surveyMethodology.steps.map((step, idx) => (
           <motion.div
             key={step.step}
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.15, duration: 0.5 }}
-            className="glass-card rounded-3xl p-5 border border-slate-200 dark:border-slate-800 flex flex-col justify-between relative overflow-hidden group hover:border-teal-500/40 transition-all"
+            className="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 flex flex-col justify-between relative overflow-hidden group hover:border-teal-500/40 transition-all"
           >
             {/* Step Number Top Pill */}
             <div className="flex items-center justify-between mb-3">

@@ -28,8 +28,8 @@ export default function NotesPanel({ isOpen, onClose, currentSlide }) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 40, scale: 0.95 }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
-          className="fixed bottom-16 right-4 sm:right-8 z-50 w-11/12 max-w-lg p-5 rounded-2xl shadow-2xl backdrop-blur-xl border border-teal-500/30 bg-slate-900/95 text-slate-100 dark:bg-slate-900/95 dark:text-slate-100"
-          style={{ maxHeight: '80vh' }}
+          className="fixed bottom-14 sm:bottom-20 left-2.5 right-2.5 sm:left-auto sm:right-8 z-50 w-auto sm:w-11/12 max-w-lg p-4 sm:p-5 rounded-2xl shadow-2xl backdrop-blur-xl border border-teal-500/30 bg-slate-900/95 text-slate-100 dark:bg-slate-900/95 dark:text-slate-100"
+          style={{ maxHeight: '78vh' }}
         >
           <div className="flex items-center justify-between pb-3 border-b border-slate-700/60">
             <div className="flex items-center gap-2 text-teal-400">

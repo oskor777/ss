@@ -10,33 +10,33 @@ export default function S09_ActivitiesTogether() {
   const { t } = useLanguage();
 
   return (
-    <div className="flex flex-col justify-center h-full max-w-7xl mx-auto px-2">
+    <div className="flex flex-col justify-start sm:justify-center min-h-full max-w-7xl mx-auto px-1 sm:px-2 py-1 sm:py-0">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-3 sm:mb-4 gap-1.5 sm:gap-2">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-wider mb-1">
-            <FiGrid className="text-sm" /> {t('Slide 9 • Survey Question 4', '9-slayd • So\'rovnoma 4-savoli')}
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-1">
+            <FiGrid className="text-xs sm:text-sm" /> {t('Slide 9 • Survey Question 4', '9-slayd • So\'rovnoma 4-savoli')}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900 dark:text-white">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight">
             {q4_whatWeDoTogether.question}
           </h2>
         </div>
 
-        <div className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1.5 mt-1 sm:mt-0">
-          <FiActivity className="text-teal-500" />
+        <div className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1.5 mt-1 sm:mt-0">
+          <FiActivity className="text-teal-500 shrink-0" />
           <span>{t('Practising Adverbs of Frequency (Always, Usually, Often, Sometimes)', 'Chastota ravishlarini qo\'llash (Always, Usually, Often, Sometimes)')}</span>
         </div>
       </div>
 
       {/* 6-Card Animated Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 my-auto">
         {q4_whatWeDoTogether.activities.map((item, idx) => (
           <motion.div
             key={item.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.08, duration: 0.4 }}
-            className="glass-card rounded-2xl p-4 border border-slate-200 dark:border-slate-800 flex flex-col justify-between hover:border-teal-500/40 transition shadow-sm"
+            className="glass-card rounded-xl sm:rounded-2xl p-3.5 sm:p-4 border border-slate-200 dark:border-slate-800 flex flex-col justify-between hover:border-teal-500/40 transition shadow-sm"
           >
             <div>
               {/* Top Row: Icon + Frequency Badge */}

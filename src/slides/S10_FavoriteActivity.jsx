@@ -30,36 +30,36 @@ export default function S10_FavoriteActivity() {
   };
 
   return (
-    <div className="flex flex-col justify-center h-full max-w-7xl mx-auto px-2">
+    <div className="flex flex-col justify-start sm:justify-center min-h-full max-w-7xl mx-auto px-1 sm:px-2 py-1 sm:py-0">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-3 sm:mb-4 gap-1.5 sm:gap-2">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-wider mb-1">
-            <FiStar className="text-sm" /> {t('Slide 10 • Survey Question 5', '10-slayd • So\'rovnoma 5-savoli')}
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-1">
+            <FiStar className="text-xs sm:text-sm" /> {t('Slide 10 • Survey Question 5', '10-slayd • So\'rovnoma 5-savoli')}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900 dark:text-white">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight">
             {q5_favoriteActivity.question}
           </h2>
         </div>
 
         {/* Winner Announcement Badge */}
-        <div className="mt-2 sm:mt-0 px-4 py-2 rounded-2xl bg-gradient-to-r from-teal-500/20 to-emerald-500/20 border border-teal-500/40 text-teal-700 dark:text-teal-300 font-heading font-bold text-xs sm:text-sm flex items-center gap-2 shadow-sm">
-          <FiAward className="text-lg text-teal-500" />
+        <div className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-2xl bg-gradient-to-r from-teal-500/20 to-emerald-500/20 border border-teal-500/40 text-teal-700 dark:text-teal-300 font-heading font-bold text-xs sm:text-sm flex items-center gap-2 shadow-sm self-start sm:self-auto">
+          <FiAward className="text-base sm:text-lg text-teal-500 shrink-0" />
           <span>
             {t('Winner:', 'G\'olib:')} <strong>{q5_favoriteActivity.winner}</strong> ({t('3/5 votes', '3/5 ovoz')})
           </span>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch my-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-5 items-stretch my-auto">
         {/* Left: Recharts Bar Chart (6 cols) */}
-        <div className="lg:col-span-6 glass-card rounded-3xl p-5 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
-          <div className="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
+        <div className="lg:col-span-6 glass-card rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+          <div className="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-slate-800 text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
             <span>{t('Vote Distribution (Total 5 Respondents)', 'Ovozlar taqsimoti (5 ishtirokchi)')}</span>
-            <span className="text-teal-500 font-semibold">{t('60% Voted for Tea & Talk', '60% Kechki choy va suhbatni tanladi')}</span>
+            <span className="text-teal-500 font-semibold">{t('60% Voted for Tea & Talk', '60% Kechki choy')}</span>
           </div>
 
-          <div className="w-full h-64 pt-2">
+          <div className="w-full h-56 sm:h-64 pt-2">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 data={q5_favoriteActivity.chartData}
@@ -67,7 +67,7 @@ export default function S10_FavoriteActivity() {
               >
                 <XAxis
                   dataKey="activity"
-                  tick={{ fill: chartColors.text, fontSize: 11, fontFamily: 'Poppins' }}
+                  tick={{ fill: chartColors.text, fontSize: 10, fontFamily: 'Poppins' }}
                   axisLine={{ stroke: chartColors.grid }}
                   tickLine={false}
                 />

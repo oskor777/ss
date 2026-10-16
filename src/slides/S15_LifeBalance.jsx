@@ -30,29 +30,29 @@ export default function S15_LifeBalance() {
   };
 
   return (
-    <div className="flex flex-col justify-center h-full max-w-7xl mx-auto px-2">
+    <div className="flex flex-col justify-start sm:justify-center min-h-full max-w-7xl mx-auto px-1 sm:px-2 py-1 sm:py-0">
       {/* Header */}
-      <div className="mb-4 text-center sm:text-left">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-wider mb-1">
-          <FiSliders className="text-sm" /> {t('Slide 15 • 24-Hour Balance', '15-slayd • 24 soatlik muvozanat')}
+      <div className="mb-3 sm:mb-4 text-center sm:text-left">
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-1">
+          <FiSliders className="text-xs sm:text-sm" /> {t('Slide 15 • 24-Hour Balance', '15-slayd • 24 soatlik muvozanat')}
         </div>
-        <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900 dark:text-white">
+        <h2 className="text-xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight">
           {lifeBalance.title}
         </h2>
-        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+        <p className="text-[11px] sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5 sm:mt-1">
           {lifeBalance.subtitle}
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch my-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-5 items-stretch my-auto">
         {/* Left: Recharts 24-Hour Doughnut Chart (6 cols) */}
-        <div className="lg:col-span-6 glass-card rounded-3xl p-5 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
-          <div className="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
+        <div className="lg:col-span-6 glass-card rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+          <div className="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-slate-800 text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
             <span>{t('Daily 24-Hour Allocation', 'Kunlik 24 soat taqsimoti')}</span>
             <span className="font-mono">{t('Total: 24 Hours', 'Jami: 24 soat')}</span>
           </div>
 
-          <div className="w-full h-64 relative">
+          <div className="w-full h-56 sm:h-64 relative">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Tooltip content={<CustomTooltip />} />

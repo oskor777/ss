@@ -42,20 +42,20 @@ export default function SlideShell({
       {...touchHandlers}
     >
       {/* Top Slide Header with Language Toggle */}
-      <header className="w-full shrink-0 px-4 sm:px-8 py-2.5 flex items-center justify-between border-b border-slate-200/60 dark:border-slate-800/60 backdrop-blur-sm z-20">
-        <div className="flex items-center gap-2 sm:gap-3">
-          <span className="text-xl">🏠</span>
-          <div>
-            <h1 className="font-heading font-extrabold text-xs sm:text-sm tracking-wide text-slate-800 dark:text-slate-200 uppercase">
+      <header className="w-full shrink-0 px-3 sm:px-8 py-2 sm:py-2.5 pt-[max(0.5rem,env(safe-area-inset-top))] flex items-center justify-between border-b border-slate-200/60 dark:border-slate-800/60 backdrop-blur-sm z-20">
+        <div className="flex items-center gap-1.5 sm:gap-3 min-w-0">
+          <span className="text-lg sm:text-xl shrink-0">🏠</span>
+          <div className="min-w-0">
+            <h1 className="font-heading font-extrabold text-[11px] sm:text-sm tracking-wide text-slate-800 dark:text-slate-200 uppercase truncate max-w-[150px] xs:max-w-[200px] sm:max-w-none">
               {data.projectInfo.title}
             </h1>
-            <p className="text-[11px] text-teal-600 dark:text-teal-400 font-medium">
+            <p className="text-[10px] sm:text-[11px] text-teal-600 dark:text-teal-400 font-medium truncate">
               {category}
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-3 text-xs">
+        <div className="flex items-center gap-1.5 sm:gap-3 text-xs shrink-0">
           {/* Header Language Switcher (UZB / EN) */}
           <LanguageToggle />
 
@@ -69,7 +69,7 @@ export default function SlideShell({
       </header>
 
       {/* Slide Body Animated Transition */}
-      <main className="relative flex-1 flex flex-col w-full h-full p-3 sm:p-6 lg:p-8 overflow-y-auto overflow-x-hidden z-10">
+      <main className="relative flex-1 flex flex-col w-full h-full p-2.5 sm:p-6 lg:p-8 overflow-y-auto overflow-x-hidden z-10 scroll-smooth">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentSlide}
@@ -79,9 +79,9 @@ export default function SlideShell({
             animate="center"
             exit="exit"
             style={{ willChange: 'transform, opacity', transform: 'translateZ(0)' }}
-            className="w-full h-full max-w-7xl mx-auto flex flex-col justify-center"
+            className="w-full min-h-full max-w-7xl mx-auto flex flex-col justify-start sm:justify-center py-1 sm:py-0"
           >
-            <div key={lang} className="w-full h-full flex flex-col justify-center">
+            <div key={lang} className="w-full min-h-full flex flex-col justify-start sm:justify-center">
               {children}
             </div>
           </motion.div>

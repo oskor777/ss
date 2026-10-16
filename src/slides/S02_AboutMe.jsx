@@ -91,14 +91,14 @@ export default function S02_AboutMe() {
   const isBioActive = speakingId === 'bio';
 
   return (
-    <div className="flex flex-col justify-center h-full max-w-6xl mx-auto px-2">
+    <div className="flex flex-col justify-start sm:justify-center min-h-full max-w-6xl mx-auto px-1 sm:px-2 py-1 sm:py-0">
       {/* Slide Title & Header Actions */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4 gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-3 sm:mb-4 gap-2 sm:gap-3">
         <div className="text-center sm:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-wider mb-1">
-            <FiCompass className="text-sm" /> {t("Slide 2 • Introduction & Goals", "2-slayd • Kirish va maqsadlar")}
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-1">
+            <FiCompass className="text-xs sm:text-sm" /> {t("Slide 2 • Introduction & Goals", "2-slayd • Kirish va maqsadlar")}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900 dark:text-white">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight">
             {t("About Me & Project Objectives", "O'zim haqimda va loyiha maqsadlari")}
           </h2>
         </div>
@@ -107,7 +107,7 @@ export default function S02_AboutMe() {
         <div className="flex items-center justify-center sm:justify-end">
           <button
             onClick={handleToggleFullSlide}
-            className={`flex items-center gap-2 px-4 py-2 rounded-2xl text-xs sm:text-sm font-heading font-bold shadow-md transition-all ${
+            className={`flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-xs sm:text-sm font-heading font-bold shadow-md transition-all ${
               isPlayingFullSlide
                 ? 'bg-rose-500 hover:bg-rose-600 text-white animate-pulse'
                 : 'bg-gradient-to-r from-teal-500 to-sky-600 hover:from-teal-600 hover:to-sky-700 text-white hover:scale-105 active:scale-95'
@@ -128,13 +128,13 @@ export default function S02_AboutMe() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch my-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-5 items-stretch my-auto">
         {/* Left Column: Student Bio & Hobbies (5 cols) */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className={`lg:col-span-5 glass-card rounded-3xl p-5 flex flex-col justify-between border transition-all duration-300 shadow-sm relative ${
+          className={`lg:col-span-5 glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-5 flex flex-col justify-between border transition-all duration-300 shadow-sm relative ${
             isBioActive
               ? 'border-teal-400 ring-2 ring-teal-400/80 shadow-xl shadow-teal-500/20 bg-teal-500/10 dark:bg-teal-950/40'
               : 'border-slate-200 dark:border-slate-800'

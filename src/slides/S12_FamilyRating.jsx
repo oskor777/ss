@@ -28,32 +28,32 @@ export default function S12_FamilyRating() {
   };
 
   return (
-    <div className="flex flex-col justify-center h-full max-w-7xl mx-auto px-2">
+    <div className="flex flex-col justify-start sm:justify-center min-h-full max-w-7xl mx-auto px-1 sm:px-2 py-1 sm:py-0">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-3">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-2.5 sm:mb-3 gap-2">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-wider mb-1">
-            <FiSmile className="text-sm" /> {t('Slide 12 • Interactive Leaderboard', '12-slayd • Interaktiv reyting')}
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-1">
+            <FiSmile className="text-xs sm:text-sm" /> {t('Slide 12 • Interactive Leaderboard', '12-slayd • Interaktiv reyting')}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900 dark:text-white">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-slate-900 dark:text-white leading-tight">
             {familyRatings.title}
           </h2>
         </div>
 
-        <div className="flex items-center gap-2 mt-2 sm:mt-0">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-1 sm:mt-0">
           <button
             onClick={() => setShowRadarView(false)}
-            className={`px-3 py-1.5 rounded-xl text-xs font-heading font-bold border transition ${
+            className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-heading font-bold border transition ${
               !showRadarView
                 ? 'bg-teal-500 text-white border-teal-400 shadow-sm'
                 : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:text-teal-500'
             }`}
           >
-            {t('Category Scores (1–10)', 'Toifa ballari (1–10)')}
+            {t('Scores (1–10)', 'Ballar (1–10)')}
           </button>
           <button
             onClick={handleShowRadar}
-            className={`px-3 py-1.5 rounded-xl text-xs font-heading font-bold border transition flex items-center gap-1.5 ${
+            className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-heading font-bold border transition flex items-center gap-1.5 ${
               showRadarView
                 ? 'bg-teal-500 text-white border-teal-400 shadow-sm'
                 : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:text-teal-500'
